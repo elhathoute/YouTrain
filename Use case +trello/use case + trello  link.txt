@@ -1,0 +1,2 @@
+use case : https://docs.google.com/spreadsheets/d/1SGr2LOGbiTPeaQU7HCZ7Lj0WxvezQyJultuQJDgDEyU/edit#gid=0
+trello    : https://trello.com/b/n7xUDbKl/youtrain%E2%84%A2-booking-system
