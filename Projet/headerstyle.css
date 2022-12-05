@@ -31,14 +31,14 @@
     position : absolute ;
     top: 35%;
     right :80px;
-    color: white;
+    color: rgb(108, 103, 255);
     box-shadow: none;
 }
 #pre{
     position : absolute ;
     top: 35%;
     left :80px;
-    color: white;
+    color: rgb(108, 103, 255);
     box-shadow: none;
 }
 @media only screen and (max-width: 800px) {
@@ -46,13 +46,11 @@
         position : absolute ;
         top: 35%;
         right :10px;
-        color: black;
     }
     #pre{
         position : absolute ;
         top: 35%;
         left :10px;
-        color: black;
     }
 }
 * {

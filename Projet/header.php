@@ -19,7 +19,7 @@
 <body style="background-color:#152242;">
 <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex align-items-center">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">YouTrain</a>
     <button class="navbar-toggler" type="button" style="color: #0008C1;" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -29,10 +29,10 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#">Reviews</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="#">Search</a>
         </li>
       </ul>
       <span class="navbar-text p-0">
@@ -183,7 +183,7 @@
   <input type="text" class="form-control w-75 rounded-pill" id="gared">
 </div>
 <div class="mb-3 p-2 col-6 d-flex flex-column align-items-center">
-  <label for="" class="form-label text-white">Temps De Départ</label>
+  <label for="" class="form-label text-white">Date De Départ</label>
   <input type="datetime-local" class="form-control w-75 rounded-pill" id="tempsd">
 </div>
 <div class="col-6 d-flex flex-column align-items-center">
@@ -196,7 +196,7 @@
   <img src="asset/arrow.svg" style="height: 50px;width:auto">
 </button></div>
 <div class="mb-3 p-2 col-6 d-flex flex-column align-items-center">
-  <label for="" class="form-label text-white">Gare d'arrivé</label>
+  <label for="" class="form-label text-white">Date d'arrivé</label>
   <input type="text" class="form-control w-75 rounded-pill" id="garea">
 </div>
 <div class="mb-3 p-2 col-6 d-flex flex-column align-items-center">
