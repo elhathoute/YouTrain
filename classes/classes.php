@@ -197,10 +197,10 @@ class voyage extends dbcon{
 
 }
 foreach(voyage::searchvoyage('2020','2020') as $vo){
-    echo $vo['id']."---->".$vo['date_dep']."---->".$vo['date_dep']."---->".
+    echo $vo['id']."---->".$vo['date_dep']."---->".$vo['date_arr']."---->".
     dbcon::searchbyid('trains',$vo['id_train'])['nom']."---->".
     dbcon::searchbyid('gares',$vo['id_gare_dep'])['nom']."---->".
-    dbcon::searchbyid('gares',$vo['id_gare_arr'])['nom']."---->".secsToStr($vo['date_dep'],$vo['date_dep']);;
+    dbcon::searchbyid('gares',$vo['id_gare_arr'])['nom']."---->".secsToStr($vo['date_dep'],$vo['date_arr']);;
     echo '<br>';
 
 
@@ -210,11 +210,9 @@ function secsToStr($d1,$d2){
     $r='';
     $d1 = strtotime($d1);
     $d2 = strtotime($d2);
-    $secs = abs($d1-$d2);
-    if($secs>=86400){$days=floor($secs/86400);$secs=$secs%86400;$r=$days.' day';if($days<>1){$r.='s';}if($secs>0){$r.=', ';}}  
-    if($secs>=3600){$hours=floor($secs/3600);$secs=$secs%3600;$r.=$hours.' hour';if($hours<>1){$r.='s';}if($secs>0){$r.=', ';}}  
-    if($secs>=60){$minutes=floor($secs/60);$secs=$secs%60;$r.=$minutes.' minute';if($minutes<>1){$r.='s';}if($secs>0){$r.=', ';}}  
-    $r.=$secs.' second';if($secs<>1){$r.='s';}  
+    $secs = abs($d1-$d2); 
+    if($secs>=3600){$hours=floor($secs/3600);$secs=$secs%3600;$r.=$hours.'h';}  
+    if($secs>=60){$minutes=floor($secs/60);$secs=$secs%60;$r.=$minutes.'min';}
     return $r;  
 }
 ?>
