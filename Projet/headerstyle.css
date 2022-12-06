@@ -40,6 +40,7 @@
     left :80px;
     color: rgb(108, 103, 255);
     box-shadow: none;
+    display: none;
 }
 @media only screen and (max-width: 800px) {
     #next{

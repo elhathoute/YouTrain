@@ -1,13 +1,5 @@
 <?php
-
-// if(isset($_SESSION['error'])){
-//     echo $_SESSION['error'];
-//     echo 'eej';
-
-// }else{
-//     echo 'eeetee';
-// }
-
+session_start();
 
 class dbcon{
     static public function conn() {
@@ -20,6 +12,13 @@ class dbcon{
             print "err". $e ->getMessage();
             die();
         }
+    }
+    static public function searchbyid($table,$id){
+        $sql = "SELECT * FROM $table WHERE `id` = $id";
+            $exe = self::conn() -> query($sql);
+            $res = $exe->fetch();
+            return $res;
+
     }
 }
 
@@ -77,11 +76,15 @@ class user extends dbcon{
         $sql = "SELECT * FROM `users` WHERE `email` = ?";
         $exe = self::conn() -> prepare($sql);
         $exe ->execute([$email]);
+        if($exe ->rowCount() > 0){
         $res = $exe -> fetch();
         if(password_verify($pass,$res['password'])){
             return true;
-        }else{
-        return false;}   
+        }else
+        {
+        return false;
+        }   
+    }
     }
     public function getusers(){
         $sql = "SELECT * FROM `users`";
@@ -90,24 +93,128 @@ class user extends dbcon{
         return $res;
         
     }
-}
-
-$jamal = new user('test','test@afhjil.fr','eeee','eeee');
-if($jamal->checkdata()){
-    $jamal->insertuser();
-}else{
-    $_SESSION['error'] = '$jamal->errormsg';
-    echo $jamal->errormsg;
-}
-
-if(user::signin("test@gail.fr","eeee")){
-    echo 'gg';
-}else{
-    echo 'tf';
+    public function getuser($id){
+        $sql = "SELECT * FROM `users` WHERE `email` = ?";
+        $exe = self::conn() -> prepare($sql);
+        $exe ->execute([$id]);
+        $res = $exe -> fetch();
+        return $res;    
+    }
 }
 
 
 
+class reviews extends dbcon{
+        public $commentaire;
+        public $userid;
+        public function __construct($comm,$userid)
+        {
+            $this ->commentaire = $comm;
+            $this->userid = $userid;
+        }
+        public function getgoodrev(){
+            $badwords = array('jamal','ded','bad');
+            $goodrev = array();
+            $sql = "SELECT * FROM `commentaires`";
+            $exe = $this -> conn() -> query($sql);
+            
+            while($res = $exe -> fetch()){
+                $badwordscount = 0;
+            for($i=0;$i< count($badwords);$i++){
+                if(str_contains(strtolower($res['commentaire']),strtolower($badwords[$i]))){
+                    $badwordscount ++;
+                }
+            }
+            if($badwordscount==0) array_push($goodrev, array("commentaire"=>$res['commentaire'],"id_user"=>$res['id_user']));
+        }
+            return $goodrev;
+
+        }
+        static public function getallrev($id = 'any(SELECT id_user FROM `commentaires`)'){
+            $sql = "SELECT * FROM `commentaires` WHERE `id_user` = $id";
+            $exe = self::conn() -> query($sql);
+            $res = $exe -> fetchAll();
+            return $res;
+        }
+        public function addrev(){
+            if($this->commentaire != ''){
+            $sql = "INSERT INTO `commentaires`(`commentaire`,`id_user`) VALUES (?,?)";
+            $exe = $this->conn() -> prepare($sql);
+            $exe -> execute([$this->commentaire,$this->userid]);
+        }else{
+            echo 'comment cant be empty';
+        } }
+}
 
 
+class voyage extends dbcon{
+    public $date_dep;
+    public $date_darr;
+    public $train_id;
+    public $gare_dep;
+    public $gare_darr;
+
+    public function __construct($dd,$da,$ti,$gd,$ga)
+    {
+        $this->date_dep = $dd;
+        $this->date_darr = $da;
+        $this->train_id = $ti;
+        $this->gare_dep = $gd;
+        $this->gare_darr = $ga;
+    }
+
+    public function addvoyage(){
+        $sql = "INSERT INTO `voyages`(`date_dep`, `date_arr`, `id_train`, `id_gare_dep`, `id_gare_arr`) VALUES (?,?,?,?,?)";
+        $exe = $this->conn() -> prepare($sql);
+        $exe -> execute([$this->date_dep,
+        $this->date_darr,
+        $this->train_id,
+        $this->gare_dep,
+        $this->gare_darr]);
+    }
+    
+    public function checkvoyagedata(){
+            if(empty( $this->date_dep )||
+            empty( $this->date_darr) ||
+         empty( $this->train_id )||
+         empty( $this->gare_dep )||
+            empty( $this->gare_darr)|| 
+            $this->gare_dep == $this->gare_darr ||
+            $this->date_dep >= $this->date_darr)return false;
+            else return true;
+    }
+    static public function searchvoyage($dd,$da,$gd = 'any(SELECT `id_gare_dep` FROM `voyages`)',$ga = 'any(SELECT `id_gare_arr` FROM `voyages`)'){
+        $dd = $dd.'%';
+        $da = $da.'%';
+        $sql = "SELECT * FROM `voyages` where date_dep like '$dd' and date_arr like '$da' and id_gare_dep = $gd and id_gare_arr = $ga;";
+        $exe = self::conn() -> query($sql);
+        $rows = $exe->fetchAll();
+        return $rows;
+
+
+    }
+
+
+}
+foreach(voyage::searchvoyage('2020','2020') as $vo){
+    echo $vo['id']."---->".$vo['date_dep']."---->".$vo['date_dep']."---->".
+    dbcon::searchbyid('trains',$vo['id_train'])['nom']."---->".
+    dbcon::searchbyid('gares',$vo['id_gare_dep'])['nom']."---->".
+    dbcon::searchbyid('gares',$vo['id_gare_arr'])['nom']."---->".secsToStr($vo['date_dep'],$vo['date_dep']);;
+    echo '<br>';
+
+
+}
+
+function secsToStr($d1,$d2){ 
+    $r='';
+    $d1 = strtotime($d1);
+    $d2 = strtotime($d2);
+    $secs = abs($d1-$d2);
+    if($secs>=86400){$days=floor($secs/86400);$secs=$secs%86400;$r=$days.' day';if($days<>1){$r.='s';}if($secs>0){$r.=', ';}}  
+    if($secs>=3600){$hours=floor($secs/3600);$secs=$secs%3600;$r.=$hours.' hour';if($hours<>1){$r.='s';}if($secs>0){$r.=', ';}}  
+    if($secs>=60){$minutes=floor($secs/60);$secs=$secs%60;$r.=$minutes.' minute';if($minutes<>1){$r.='s';}if($secs>0){$r.=', ';}}  
+    $r.=$secs.' second';if($secs<>1){$r.='s';}  
+    return $r;  
+}
 ?>

@@ -165,6 +165,33 @@
     </div>
   </div>
     </div>
+    <div class="col-lg-4 col-md-6 col-12 p-2">
+<div class="card">
+    <div class="card-body">
+      <div class="w-100 d-flex justify-content-center">
+    <div class="card-img-top rounded-circle mb-3" style="min-height: 80px;max-height: 80px;min-width: 80px;max-width: 80px;background-image:url(https://picsum.photos/200);background-position: center;background-repeat: no-repeat;background-size: cover;"></div></div>
+      <h4 class="card-title d-flex justify-content-center">John Doe</h4>
+      <div class="d-flex justify-content-center">
+      <svg style="display:none;">
+        <defs>
+          <symbol id="fivestars" >
+            <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z M0 0 h24 v24 h-24 v-24" fill="white" fill-rule="evenodd"/>
+            <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z M0 0 h24 v24 h-24 v-24" fill="white" fill-rule="evenodd" transform="translate(24)"/>
+            <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z M0 0 h24 v24 h-24 v-24" fill="white" fill-rule="evenodd" transform="translate(48)"/>
+            <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z M0 0 h24 v24 h-24 v-24" fill="white" fill-rule="evenodd" transform="translate(72)"/>
+            <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z M0 0 h24 v24 h-24 v-24" fill="white" fill-rule="evenodd"  transform="translate(96)"/>
+          </symbol>
+        </defs>
+      </svg>
+      <div class="rating">
+        <progress class="rating-bg" value="3" max="5"></progress>
+        <svg><use xlink:href="#fivestars"/></svg>
+      </div>
+    </div>
+      <p class="card-text d-flex justify-content-center">Some example text some example text. John Doe is an archexample text. John Dogineeexample text. John Doe is an architect and engineeitect and engineer</p>
+    </div>
+  </div>
+    </div>
   </div>
   
   </div>
@@ -260,18 +287,30 @@ console.log(size);
 console.log(minise,percent);
 }
     var ratings = document.getElementsByClassName('rating-bg').length;
-    console.log(ratings); 
     var translatecount = 0;
     function translatepre(){
       if(translatecount > 0){
       translatecount --;}
-      console.log(minise,percent);
+      if(translatecount < (ratings - minise)){
+      document.getElementById('next').style.display = 'block';
+      }
+      if(translatecount == 0){
+        document.getElementById('pre').style.display = 'none';
+        
+      }
       document.getElementById('translate').style.transform = "translate(calc(-"+percent+"% * "+Math.abs(translatecount)+"),0px)";
       
     }
     function translatenext(){
       if(translatecount < (ratings - minise)){
       translatecount++;}
+      if(translatecount != 0){
+        document.getElementById('pre').style.display = 'block';
+      }
+      if(translatecount == (ratings - minise)){
+        document.getElementById('next').style.display = 'none';
+        
+      }
       document.getElementById('translate').style.transform = "translate(calc(-"+percent+"% * "+Math.abs(translatecount)+"),0px)";
       
     }
