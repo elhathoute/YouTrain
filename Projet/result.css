@@ -6,4 +6,9 @@
     box-sizing: border-box;
 }
 
-.nav-link:hover {}
+#btnReserv:hover {
+    background-color: white;
+    border: 3px solid rgb(228, 58, 25);
+    color: rgb(228, 58, 25);
+    font-weight: bolder;
+}
