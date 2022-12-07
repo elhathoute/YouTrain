@@ -196,15 +196,6 @@ class voyage extends dbcon{
 
 
 }
-foreach(voyage::searchvoyage('2020','2020') as $vo){
-    echo $vo['id']."---->".$vo['date_dep']."---->".$vo['date_arr']."---->".
-    dbcon::searchbyid('trains',$vo['id_train'])['nom']."---->".
-    dbcon::searchbyid('gares',$vo['id_gare_dep'])['nom']."---->".
-    dbcon::searchbyid('gares',$vo['id_gare_arr'])['nom']."---->".secsToStr($vo['date_dep'],$vo['date_arr']);;
-    echo '<br>';
-
-
-}
 
 function secsToStr($d1,$d2){ 
     $r='';
@@ -215,4 +206,7 @@ function secsToStr($d1,$d2){
     if($secs>=60){$minutes=floor($secs/60);$secs=$secs%60;$r.=$minutes.'min';}
     return $r;  
 }
+
+
+
 ?>

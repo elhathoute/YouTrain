@@ -44,17 +44,51 @@
 
 <!-- hero section   -->
 
-<div class="d-flex flex-column align-items-center" >
+<div class="d-flex flex-column align-items-center justify-content-center" style="height: 93vh;">
 <div class="mt-5 mb-5">
 <h1 class="text-white " style="font-size: 45px;">Voyager En Toute</h1>
 <div class="anima">Sécurité</div>
 <div class="anima">Rapidité</div>
 <div class="anima">Confort</div>
 </div>
-
+</div>
+<!-- search section -->
+<form action="" method="post" class="w-100 row p-5" style="background-color: #293659;">
+    <div class="mb-3 p-2 col-6 d-flex flex-column align-items-center">
+  <label for="exampleFormControlInput1" class="form-label text-white">Gare De Départ</label>
+<input type="text" class="form-control rounded-pill" id="gared">
+</div>
+<div class="mb-3 p-2 col-6 d-flex flex-column align-items-center">
+  <label for="" class="form-label text-white">Date De Départ</label>
+<input type="datetime-local" class="form-control rounded-pill" id="tempsd">
+</div>
+<div class="col-6 d-flex flex-column align-items-center">
+<button class="btn shadow-none bg-transparent" type="button" onclick="switchgare()">
+  <img src="asset/arrow.svg" style="height: 50px;width:auto">
+</button>
+</div>
+<div class="col-6 d-flex flex-column align-items-center">
+<button class="btn shadow-none bg-transparent" type="button" onclick="switchtime()">
+  <img src="asset/arrow.svg" style="height: 50px;width:auto">
+</button></div>
+<div class="mb-3 p-2 col-6 d-flex flex-column align-items-center">
+  <label for="" class="form-label text-white">Date d'arrivé</label>
+  <input type="text" class="form-control rounded-pill" id="garea">
+</div>
+<div class="mb-3 p-2 col-6 d-flex flex-column align-items-center">
+  <label for="" class="form-label text-white ">Temps d'arrivé</label>
+  <input type="datetime-local" class="form-control rounded-pill" id="tempsa">
+</div>
+<div class="my-3  d-flex flex-column align-items-center">
+<button type="submit" class="w-100 rounded-pill btn btn-primary">Search</button>
+</div>
+    </form>
 <!-- reviews -->
-
-<div class="position-relative w-100 mt-5" >
+<div class="d-flex flex-column align-items-center mt-5 p-5" >
+  <h1 class="text-white">still not convinced !</h1>
+  <h5 class="text-white">that's what people think about us</h5>
+</div>
+<div class="position-relative w-100 mb-5" >
 <div class="container overflow-hidden" >
   <div id="translate" class="d-flex justify-content-start" style="transition-duration: 3s;">
   <div class="col-lg-4 col-md-6 col-12 p-2">
@@ -204,37 +238,7 @@
     
     </div>
   
-    <form action="" method="post" class="w-100 row">
-    <div class="mb-3 p-2 col-6 d-flex flex-column align-items-center">
-  <label for="exampleFormControlInput1" class="form-label text-white">Gare De Départ</label>
-  <input type="text" class="form-control w-75 rounded-pill" id="gared">
-</div>
-<div class="mb-3 p-2 col-6 d-flex flex-column align-items-center">
-  <label for="" class="form-label text-white">Date De Départ</label>
-  <input type="datetime-local" class="form-control w-75 rounded-pill" id="tempsd">
-</div>
-<div class="col-6 d-flex flex-column align-items-center">
-<button class="btn shadow-none bg-transparent" type="button" onclick="switchgare()">
-  <img src="asset/arrow.svg" style="height: 50px;width:auto">
-</button>
-</div>
-<div class="col-6 d-flex flex-column align-items-center">
-<button class="btn shadow-none bg-transparent" type="button" onclick="switchtime()">
-  <img src="asset/arrow.svg" style="height: 50px;width:auto">
-</button></div>
-<div class="mb-3 p-2 col-6 d-flex flex-column align-items-center">
-  <label for="" class="form-label text-white">Date d'arrivé</label>
-  <input type="text" class="form-control w-75 rounded-pill" id="garea">
-</div>
-<div class="mb-3 p-2 col-6 d-flex flex-column align-items-center">
-  <label for="" class="form-label text-white ">Temps d'arrivé</label>
-  <input type="datetime-local" class="form-control w-75 rounded-pill" id="tempsa">
-</div>
-<div class="mb-3  d-flex flex-column align-items-center">
-<button type="submit" class="w-75 rounded-pill btn btn-primary">Search</button>
-</div>
-    </form>
-</div>
+
 </body>
 </html>
 <script src="https://kit.fontawesome.com/16f6b89e3c.js" crossorigin="anonymous"></script>

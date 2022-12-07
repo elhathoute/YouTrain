@@ -93,6 +93,7 @@ a:hover{
 }
 #flexSwitchCheckDefault:checked{
     background-color: #0008C1;
+    background-color: #293659;
     outline: none;
     border: none;
     box-shadow: none;
