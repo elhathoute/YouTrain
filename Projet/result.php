@@ -20,7 +20,7 @@
         <div class="container-fluid">
             <div class="d-flex justify-content-between w-100 flex-wrap">
                 <div class="d-flex justify-content-center">
-                    <a class="navbar-brand text-white" href="#" style="margin-left: 30px; margin-right: 90px"><span class="fw-bold fs-4">Your</span> <span class="fs-5">Train</span> <span class="fs-4">™</span></a>
+                    <a class="navbar-brand text-white" href="#" style="margin-left: 30px;"><span class="fw-bold fs-4">Your</span> <span class="fs-5">Train</span> <span class="fs-4">™</span></a>
                 </div>
 
                 <div class="">
@@ -28,7 +28,7 @@
                         <div class="" id="navbarSupportedContent">
 
                             <ul class="navbar-nav d-flex flex-row justify-content-evenly ">
-                                <li class=" nav-item dropdown me-4 pe-4">
+                                <li class=" nav-item dropdown me-3 pe-2">
                                     <a class="nav-link dropdown-toggle text-white" href="# " role="button " data-bs-toggle="dropdown" aria-expanded="false ">
                                         <span class="material-symbols-outlined text-white"> account_circle </span>
                                     </a>
