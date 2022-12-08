@@ -10,7 +10,7 @@ class Gares {
     public function __construct($id, $nom, $id_ville)
     {
         $this->id       = $id;
-        $this->$nom     = $nom;
+        $this->nom     = $nom;
         $this->id_ville = $id_ville;
     }
 
