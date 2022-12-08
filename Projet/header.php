@@ -7,7 +7,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,8 +15,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="headerstyle.css">
     <title>Document</title>
-</head>
-<body style="background-color:#152242;">
+  </head>
+  <body style="background-color:#152242;">
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex align-items-center">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">YouTrain</a>
@@ -43,15 +44,24 @@
 </nav>
 
 <!-- hero section   -->
-
-<div class="d-flex flex-column align-items-center justify-content-center" style="height: 93vh;">
+<div id="particles-js" class="position-relative">
+  <div class="position-absolute" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <h1 class="text-white text-center" style="font-size: 45px;">Voyager En Toute</h1>
+    <div class="anima">Sécurité</div>
+    <div class="anima">Rapidité</div>
+    <div class="anima">Confort</div>
+  </div>
+</div>
+  
+<!-- <div class="d-flex flex-column align-items-center justify-content-center" >
 <div class="mt-5 mb-5">
 <h1 class="text-white " style="font-size: 45px;">Voyager En Toute</h1>
 <div class="anima">Sécurité</div>
 <div class="anima">Rapidité</div>
 <div class="anima">Confort</div>
 </div>
-</div>
+</div> -->
+
 <!-- search section -->
 <form action="" method="post" class="w-100 row p-5" style="background-color: #293659;">
     <div class="mb-3 p-2 col-6 d-flex flex-column align-items-center">
@@ -330,3 +340,6 @@ console.log(minise,percent);
       document.getElementById('tempsa').value = time;
     }
 </Script>
+
+<script src="particles.js"></script>
+    <script src="app.js"></script>
