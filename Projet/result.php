@@ -66,7 +66,7 @@
                 <h4 class="text-start text-dark my-4 ">Aller mercredi 07 décembre 2022</h4>
             </div>
             <div class="row ">
-                <div class="card rounded-4 ">
+                <div class="card rounded-4 shadow">
                     <div class="card-header bg-white d-flex justify-content-between mt-2 mx-3 ">
                         <div class="text-center ">
                             <p class="fw-semibold ">Départ</p>

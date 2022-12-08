@@ -26,7 +26,6 @@
                 <div class="">
                     <div class="" id="">
                         <div class="" id="navbarSupportedContent">
-
                             <ul class="navbar-nav d-flex flex-row justify-content-evenly ">
                                 <li class=" nav-item dropdown me-3 pe-2">
                                     <a class="nav-link dropdown-toggle text-white" href="# " role="button " data-bs-toggle="dropdown" aria-expanded="false ">
