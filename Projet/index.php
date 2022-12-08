@@ -13,8 +13,8 @@
         // echo $testObj->totalPrice();
         $testObj->addData();
 
-        // $testObj = new Test();
-        // $testObj->deleteData("trains", "13");
+
+
 
     ?>
     <h1>hello</h1>
