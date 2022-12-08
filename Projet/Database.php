@@ -1,16 +1,21 @@
 <?php
-session_start();
-class Connection{
-    public $servername = 'localhost';
-    public $username = 'root';
-    public $password = '';
-    public $db_name = "management_traines";
-    
-    public $conn;
-
-    public function __construct(){
-        $this->conn = new PDO("mysql:host=$this->servername;dbname=$this->db_name", $this->username, $this->password);
-        $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+class dbcon{
+    static public function conn() {
+        try{
+            $db = new PDO('mysql:host=localhost;dbname=management_traines','root','');
+            $db ->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE , PDO::FETCH_ASSOC);
+            return $db;
         }
+        catch (PDOException $e){
+            print "err". $e ->getMessage();
+            die();
+        }
+    }
+    static public function searchbyid($table,$id){
+        $sql = "SELECT * FROM $table WHERE `id` = $id";
+            $exe = self::conn() -> query($sql);
+            $res = $exe->fetch();
+            return $res;
 
+    }
 }

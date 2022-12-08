@@ -35,7 +35,10 @@
                                     <ul class="dropdown-menu ">
                                         <li><a class="dropdown-item mt-2 " href="# ">Mon Profil</a></li>
                                         <li><a class="dropdown-item mt-2 " href="# ">Mes réservations</a></li>
-                                        <li><a class="dropdown-item my-2 " href="# ">Se déconnecter</a></li>
+                                        <form name="logout" method="get" action="">
+                                        <li><button class="dropdown-item my-2 " type="submit" name="btnLog">Se déconnecter</button></li>
+                                        </form>
+                                        
                                     </ul>
                                 </li>
                                 <li class="nav-item me-5">
@@ -99,7 +102,9 @@
                             <p class="px-2 fw-semibold ">1 passager</p>
                             <p class="px-2 fw-semibold ">A partir de</p>
                             <p class="px-2 fw-semibold ">115 MAD</p>
+                            <form method="post" name="reservation" action="">
                             <button id="btnReserv" type="submit" class="btn btn-dark px-3">Réserver</button>
+                            </form>
                         </div>
                     </div>
                 </div>
