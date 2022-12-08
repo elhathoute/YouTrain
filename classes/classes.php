@@ -13,8 +13,8 @@ class dbcon{
             die();
         }
     }
-    static public function searchbyid($table,$id){
-        $sql = "SELECT * FROM $table WHERE `id` = $id";
+    static public function searchby($table,$by,$id){
+        $sql = "SELECT * FROM $table WHERE `$by` = $id";
             $exe = self::conn() -> query($sql);
             $res = $exe->fetch();
             return $res;
@@ -79,7 +79,7 @@ class user extends dbcon{
         if($exe ->rowCount() > 0){
         $res = $exe -> fetch();
         if(password_verify($pass,$res['password'])){
-            return true;
+            return $res;
         }else
         {
         return false;
@@ -100,6 +100,9 @@ class user extends dbcon{
         $res = $exe -> fetch();
         return $res;    
     }
+    static public function logout(){
+        session_destroy();
+    } 
 }
 
 
@@ -183,15 +186,12 @@ class voyage extends dbcon{
             $this->date_dep >= $this->date_darr)return false;
             else return true;
     }
-    static public function searchvoyage($dd,$da,$gd = 'any(SELECT `id_gare_dep` FROM `voyages`)',$ga = 'any(SELECT `id_gare_arr` FROM `voyages`)'){
-        $dd = $dd.'%';
-        $da = $da.'%';
-        $sql = "SELECT * FROM `voyages` where date_dep like '$dd' and date_arr like '$da' and id_gare_dep = $gd and id_gare_arr = $ga;";
+    static public function searchvoyage($gd = 'any(SELECT `id_gare_dep` FROM `voyages`)',$ga = 'any(SELECT `id_gare_arr` FROM `voyages`)'){
+        $now = date('20y-m-d h:m:s');
+        $sql = "SELECT * FROM `voyages` WHERE id_gare_dep = $gd and id_gare_arr = $ga and date_dep >= '$now'";
         $exe = self::conn() -> query($sql);
         $rows = $exe->fetchAll();
         return $rows;
-
-
     }
 
 
@@ -209,4 +209,4 @@ function secsToStr($d1,$d2){
 
 
 
-?>
+

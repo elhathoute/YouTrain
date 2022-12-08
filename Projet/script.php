@@ -30,8 +30,21 @@ if(isset($_POST['register'])){
     header('location:signin.php');
     }
 
+if(isset($_POST['signin1'])){
+        setcookie("email_cookie",$_POST['loginemail1'], time() + (60*60*24), "/");
+    
+    if(user::signin($_POST['loginemail1'],$_POST['loginpass1'])){
+        if(isset($_POST['RMcheckbox1'])){
+            setcookie("email_cookie",$_POST['loginemail1'], time() + (60*60*24), "/");
+            setcookie("password_cookie",$_POST['loginpass1'], time() + (60*60*24), "/");
+    }
+        $_SESSION['user'] = user::signin($_POST['loginemail1'],$_POST['loginpass1']);
+        header('location:header.php');
+    }else{
+        header('location:header.php');
+    }}
 
 
-
+if(isset($_POST['logout'])){user::logout();header('location:header.php');}
 
 ?>

@@ -1,7 +1,6 @@
 <?php
 
-
-
+include('script.php');
 
 
 ?>
@@ -11,37 +10,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="headerstyle.css">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body style="background-color:#152242;">
-<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex align-items-center">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">YouTrain</a>
-    <button class="navbar-toggler" type="button" style="color: #0008C1;" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Reviews</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Search</a>
-        </li>
-      </ul>
-      <span class="navbar-text p-0">
-        <a class="btn btn-primary text-white rounded-pill px-3" href="signin.php">login or signin</a>
-      </span>
-    </div>
-  </div>
-</nav>
+    <?php   
+    
+    include_once('navbar.php');
 
+    ?>
 <!-- hero section   -->
 
 <div class="d-flex flex-column align-items-center justify-content-center" style="height: 93vh;">
@@ -241,8 +221,35 @@
 
 </body>
 </html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/16f6b89e3c.js" crossorigin="anonymous"></script>
 <Script>
+var va = document.getElementById('profile');
+var signinform = document.getElementById('signinform');
+  function showprofile(){
+    va.classList.toggle("active");
+  }
+  function showsignin(){
+    signinform.classList.toggle("active");
+  }
+    window.addEventListener("scroll", (event) => {
+    va.classList.remove("active");
+    signinform.classList.remove("active");
+    let scroll = this.scrollY;
+    if(scroll!=0){
+      document.getElementById('navbarst').style.backgroundColor = 'white';
+      document.getElementById('profiletoggler').classList.remove('text-white');
+      document.getElementById('profiletoggler').classList.add('text-dark');
+      document.getElementById('logo').classList.remove('text-white');
+      document.getElementById('logo').classList.add('text-dark');
+    }else{
+      document.getElementById('navbarst').style.backgroundColor = '#152242';
+      document.getElementById('profiletoggler').classList.add('text-white');
+      document.getElementById('profiletoggler').classList.remove('text-dark');
+      document.getElementById('logo').classList.add('text-white');
+      document.getElementById('logo').classList.remove('text-dark');
+    }
+});
     anima(0);
     function anima($j){
         if($j==3){
@@ -273,8 +280,6 @@ var percent = 34;
     minise = 1;
     percent = 100;
   }
-console.log(size);
-console.log(minise,percent);
 }
 window.onload = function(){
   let size = window.innerWidth;
@@ -287,8 +292,6 @@ window.onload = function(){
     minise = 1;
     percent = 100;
   }
-console.log(size);
-console.log(minise,percent);
 }
     var ratings = document.getElementsByClassName('rating-bg').length;
     var translatecount = 0;

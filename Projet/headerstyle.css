@@ -13,7 +13,7 @@
     color:#CFA670;
     border-right : #CFA670 solid 1px;
 
-    
+   
 }
 .anima.active{
     display: block;
@@ -26,6 +26,22 @@
     50%  {width: 100%;}
     100% {width: 0%;}
   }
+
+.profile{
+  right: 0px;
+  top: 50px;
+  display: none;
+}
+.profile.active{
+  display: block;
+  animation-name: example1;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+@keyframes example1 {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
 
 #next{
     position : absolute ;

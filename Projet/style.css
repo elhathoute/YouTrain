@@ -1,5 +1,4 @@
 body{
-    background-image: url('asset/Train.svg');
     background-color: #e6e6e6;
     height: 100vh;
     background-position: center;
@@ -16,6 +15,17 @@ body{
     background-color: #0008C1;
     color: #ffffff;
 }
+.signinform{
+    right: 50px;
+    top: 60px;
+    display: none;
+  }
+  .signinform.active{
+    display: block;
+    animation-name: example1;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+  }
 #buttonR{
     background-color: #009EFF;
     color: #ffffff;
