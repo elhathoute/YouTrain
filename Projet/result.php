@@ -91,7 +91,7 @@
                     <div class="card-body d-flex justify-content-between align-items-center ">
                         <div class="d-flex align-items-center ">
                             <div class="ps-2 ">
-                                <i class="bx bx-train fs-1 " style="color: rgb(228, 58, 25) "></i>
+                                <i class="bx bx-train fs-1 " style="color: rgb(228, 58, 25);"></i>
                             </div>
                             <div class="px-3 text-center ">
                                 <p class="mt-2 text-center pt-3 fs-5 ">Atlas</p>

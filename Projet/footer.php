@@ -14,8 +14,8 @@
 
     <link rel="stylesheet" href="./result.css" />
 </head>
-<body style="background-color: rgb(242, 244, 247)">
-<footer style="background-color: rgb(188, 206, 248);">
+<body>
+    <footer style="background-color: rgb(188, 206, 248); width: 100%;">
         <div class="container mt-5 pt-5">
             <div class="d-flex flex-nowrap justify-content-center">
                 <a href="#" style="color: black;"><i id="bx1" class='bx bxl-facebook fs-1 mx-2'></i></a>
