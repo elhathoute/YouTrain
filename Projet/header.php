@@ -14,34 +14,20 @@ include('script.php');
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="headerstyle.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./result.css" />
     <title>Document</title>
 </head>
 <body style="background-color:#152242;">
-<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex align-items-center">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">YouTrain</a>
-    <button class="navbar-toggler" type="button" style="color: #0008C1;" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Reviews</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Search</a>
-        </li>
-      </ul>
-      <span class="navbar-text p-0">
-        <a class="btn btn-primary text-white rounded-pill px-3" href="signin.php">login or signin</a>
-      </span>
-    </div>
-  </div>
-</nav>
+<?php
 
+// include_once('navbar.php');
+
+?>
 <!-- hero section   -->
 <div id="particles-js" class="position-relative">
   <div class="position-absolute" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
@@ -63,30 +49,18 @@ include('script.php');
 
 <!-- search section -->
 <form action="" method="post" class="w-100 row p-5" style="background-color: #293659;">
-    <div class="mb-3 p-2 col-6 d-flex flex-column align-items-center">
+    <div class="mb-3 p-2 col-12 d-flex flex-column align-items-center">
   <label for="exampleFormControlInput1" class="form-label text-white">Gare De Départ</label>
 <input type="text" class="form-control rounded-pill" id="gared">
 </div>
-<div class="mb-3 p-2 col-6 d-flex flex-column align-items-center">
-  <label for="" class="form-label text-white">Date De Départ</label>
-<input type="datetime-local" class="form-control rounded-pill" id="tempsd">
-</div>
-<div class="col-6 d-flex flex-column align-items-center">
+<div class="col-12 d-flex flex-column align-items-center">
 <button class="btn shadow-none bg-transparent" type="button" onclick="switchgare()">
   <img src="asset/arrow.svg" style="height: 50px;width:auto">
 </button>
 </div>
-<div class="col-6 d-flex flex-column align-items-center">
-<button class="btn shadow-none bg-transparent" type="button" onclick="switchtime()">
-  <img src="asset/arrow.svg" style="height: 50px;width:auto">
-</button></div>
-<div class="mb-3 p-2 col-6 d-flex flex-column align-items-center">
-  <label for="" class="form-label text-white">Date d'arrivé</label>
+<div class="mb-3 p-2 col-12 d-flex flex-column align-items-center">
+  <label for="" class="form-label text-white">gare d'arrivé</label>
   <input type="text" class="form-control rounded-pill" id="garea">
-</div>
-<div class="mb-3 p-2 col-6 d-flex flex-column align-items-center">
-  <label for="" class="form-label text-white ">Temps d'arrivé</label>
-  <input type="datetime-local" class="form-control rounded-pill" id="tempsa">
 </div>
 <div class="my-3  d-flex flex-column align-items-center">
 <button type="submit" class="w-100 rounded-pill btn btn-primary">Search</button>
@@ -247,7 +221,11 @@ include('script.php');
     
     </div>
   
+<?php
 
+include_once('footer.php');
+
+?>
 </body>
 </html>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -262,7 +240,7 @@ var signinform = document.getElementById('signinform');
     signinform.classList.toggle("active");
   }
     window.addEventListener("scroll", (event) => {
-    va.classList.remove("active");
+    // va.classList.remove("active");
     signinform.classList.remove("active");
     let scroll = this.scrollY;
     if(scroll!=0){

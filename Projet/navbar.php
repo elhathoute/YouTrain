@@ -21,7 +21,7 @@
                         <a class="nav-link dropdown-toggle d-flex align-items-center  p-0 mb-1 text-white" id="profiletoggler" onclick="showprofile()">
                         <div class="card-img-top rounded-circle  me-3" style="min-height: 40px;max-height: 40px;min-width: 40px;max-width: 40px;background-image:url(https://picsum.photos/200);background-position: center;background-repeat: no-repeat;background-size: cover;"></div>
                         </a>
-                        <ul class="bg-white overflow-hidden position-absolute list-group profile" id="profile">
+                        <ul class="bg-white overflow-hidden position-absolute list-group profile active" id="profile">
                         <form method="post" action="">
                             <li><button type="submit" name="profile" class="dropdown-item mt-2">Mon Profil</button></li>
                             <li><button type="submit" name="reservations" class="dropdown-item mt-2">Mes réservations</button></li>
@@ -69,5 +69,34 @@
     </nav>
     </body>
 <!-- JavaScript Bundle with Popper -->
+<script>
 
+
+var va = document.getElementById('profile');
+var signinform = document.getElementById('signinform');
+  function showprofile(){
+    va.classList.toggle("active");
+  }
+  function showsignin(){
+    signinform.classList.toggle("active");
+  }
+    window.addEventListener("scroll", (event) => {
+    // va.classList.remove("active");
+    signinform.classList.remove("active");
+    let scroll = this.scrollY;
+    if(scroll!=0){
+      document.getElementById('navbarst').style.backgroundColor = 'white';
+      document.getElementById('profiletoggler').classList.remove('text-white');
+      document.getElementById('profiletoggler').classList.add('text-dark');
+      document.getElementById('logo').classList.remove('text-white');
+      document.getElementById('logo').classList.add('text-dark');
+    }else{
+      document.getElementById('navbarst').style.backgroundColor = '#152242';
+      document.getElementById('profiletoggler').classList.add('text-white');
+      document.getElementById('profiletoggler').classList.remove('text-dark');
+      document.getElementById('logo').classList.add('text-white');
+      document.getElementById('logo').classList.remove('text-dark');
+    }
+});
+</script>
 </html>
