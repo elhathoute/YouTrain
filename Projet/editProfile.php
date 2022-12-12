@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php
-    require("navbar.php");
+    include("navbar.php");
     ?>
     <section>
     <div class="container pt-5">
@@ -17,7 +17,7 @@
                <h3 class="fw-semibold">Mon profil</h3> 
             </div>
             <div>
-                <button type="button" class="btn btn-outline-danger rounded-4"> <span class="fw-bold" style=" font-size: 14px;">Se déconnecter</span> </button>
+                <button type="submit" id="btnLogout" class="btn btn-outline-danger rounded-4"> <span class="fw-bold" style=" font-size: 14px;">Se déconnecter</span> </button>
             </div>
         </div>
         <hr class="my-4">
@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="">
-                <button type="button" class="btn btn-outline-dark rounded-4"><span class="fw-normal" style=" font-size: 14px;">Modifier mon profil</span></button>
+                <button type="submit" id="btnEdit" class="btn btn-outline-dark rounded-4"><span class="fw-normal" style=" font-size: 14px;">Modifier mon profil</span></button>
             </div>
         </div>
         <hr class="my-4">
@@ -91,7 +91,7 @@
             <div class="text-center my-4">
                 <h4 class="fw-bold" style="color:rgb(32, 83, 117);">Mes informations de connexion</h4>
             </div>
-            <form action="" method="post" class="bg-white mx-1 px-3 py-3" style="border-radius: 10px 50px;">
+            <form action="" id="" method="post" class="bg-white mx-1 px-3 py-3" style="border-radius: 10px 50px;">
                 <div class="col-md-12 mt-2">
                     <label for="identifiant" class="form-label fw-semibold" style="color:rgb(32, 83, 117);">Mon Identifiant Client</label>
                     <input type="text" class="form-control" id="identifiant"  style="border-color:rgb(32, 83, 117);">
@@ -100,29 +100,26 @@
                     <label for="email" class="form-label fw-semibold" style="color:rgb(32, 83, 117);">Mon e-mail</label>
                     <input type="email" class="form-control" id="email"  style="border-color:rgb(32, 83, 117);">
                 </div>
-                <div class="col-md-12 mt-5">
-                    <label for="email" class="form-label fw-semibold" style="color:rgb(32, 83, 117);">Ancien Mot de passe</label>
-                    <input type="email" class="form-control" id="email"  style="border-color:rgb(32, 83, 117);">
+                <div class="col-md-12 mt-5" id="input1">
+                    
                 </div>
-                <div class="col-md-12 mt-5">
-                    <label for="email" class="form-label fw-semibold" style="color:rgb(32, 83, 117);">Nouveau mot de passe</label>
-                    <input type="email" class="form-control" id="email" style="border-color:rgb(32, 83, 117);">
+                <div class="col-md-12 mt-5" id="input2">
+                    
                 </div>
-                <div class="col-md-12 mt-5">
-                    <label for="email" class="form-label fw-semibold" style="color:rgb(32, 83, 117);">Confirmer le mot de passe</label>
-                    <input type="email" class="form-control" id="email" style="border-color:rgb(32, 83, 117);">
+                <div class="col-md-12 mt-5" id="input3">
+                    
                 </div>
                 <div class="col-md-12 mt-5 text-center">
-                    <button type="submit" class="btn btn-outline-dark px-4 fw-semibold">Je change mon Mot de passe</button>
+                    <button onclick="show(); return false" type="submit" id="btnChange" class="btn btn-outline-dark px-4 fw-semibold">Je change mon Mot de passe</button>
                 </div>
                 <div class="col-md-12 mt-3 text-center">
-                    <button type="submit" class="btn btn-outline-secondary px-5 mb-2 border-0 fw-semibold">J'annule</button>
+                    <button onclick="hide(); return false" type="submit" id="btnAnnuler" class="btn btn-outline-secondary px-5 mb-2 border-0 fw-semibold">J'annule</button>
                 </div>
             </form>
         </div>
         <hr class="my-4">
         <div class="text-end py-3">
-            <button type="button" class="btn btn-outline-success w-15 fw-semibold">Enregistrer</button>
+            <button type="submit" id="btnSave"  class="btn btn-outline-success w-15 fw-semibold">Enregistrer</button>
         </div>
     </div>
     </section>
@@ -130,4 +127,5 @@
     include("./footer.php");
     ?>
 </body>
+<script src="./editProfile.js"></script>
 </html>
