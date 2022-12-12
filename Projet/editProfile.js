@@ -20,3 +20,11 @@ function hide() {
     document.getElementById('input3').innerHTML = "";
 
 }
+
+function edit() {
+    let inputs = document.getElementsByTagName('input');
+    console.log(inputs);
+    for (let i = 0; i < inputs.length; i++) {
+        inputs[i].disabled = false;
+    }
+}
