@@ -17,11 +17,30 @@ include('script.php');
     <title>Document</title>
 </head>
 <body style="background-color:#152242;">
-<?php
-
-include_once('navbar.php');
-
-?>
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex align-items-center">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">YouTrain</a>
+    <button class="navbar-toggler" type="button" style="color: #0008C1;" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Reviews</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Search</a>
+        </li>
+      </ul>
+      <span class="navbar-text p-0">
+        <a class="btn btn-primary text-white rounded-pill px-3" href="signin.php">login or signin</a>
+      </span>
+    </div>
+  </div>
+</nav>
 
 <!-- hero section   -->
 <div id="particles-js" class="position-relative">
