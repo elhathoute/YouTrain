@@ -20,6 +20,11 @@ class dbcon{
             return $res;
 
     }
+    static private function updateVoyages($id,$nmbr){
+        $sql = 'UPDATE `voyages` SET cap_voyage = cap_voyage - ? where id = ?';
+        $exe = self::conn() -> prepare($sql);
+        $exe ->execute([$nmbr,$id]);
+    }
 }
 
 class user extends dbcon{
