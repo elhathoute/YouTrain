@@ -23,8 +23,11 @@ function hide() {
 
 function edit() {
     let inputs = document.getElementsByTagName('input');
-    console.log(inputs);
+    let buttons = document.getElementsByTagName("button");
     for (let i = 0; i < inputs.length; i++) {
         inputs[i].disabled = false;
+    }
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = false;
     }
 }

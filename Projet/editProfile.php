@@ -110,10 +110,10 @@
                     
                 </div>
                 <div class="col-md-12 mt-5 text-center">
-                    <button onclick="show(); return false" type="submit" id="btnChange" class="btn btn-outline-dark px-4 fw-semibold" >Je change mon Mot de passe</button>
+                    <button onclick="show(); return false" type="submit" id="btnChange" class="btn btn-outline-dark px-4 fw-semibold" disabled>Je change mon Mot de passe</button>
                 </div>
                 <div class="col-md-12 mt-3 text-center">
-                    <button onclick="hide(); return false" type="submit" id="btnAnnuler" class="btn btn-outline-secondary px-5 mb-2 border-0 fw-semibold" >J'annule</button>
+                    <button onclick="hide(); return false" type="submit" id="btnAnnuler" class="btn btn-outline-secondary px-5 mb-2 border-0 fw-semibold" disabled>J'annule</button>
                 </div>
             </form>
         </div>
