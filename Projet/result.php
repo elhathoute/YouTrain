@@ -58,9 +58,9 @@
                 <p class="text-center ">Deuxième Classe</p>
                 <div class="text-center mb-5 ">
                     <button type="button " class="btn btn-outline-dark text-center " style="width: 300px ">
-              <span class="material-symbols-outlined text-center fs-5 me-2 ">search </span>
-              <span class="text-center ">Mon nouveau trajet</span>
-            </button>
+                        <span class="material-symbols-outlined text-center fs-5 me-2 ">search </span>
+                        <span class="text-center ">Mon nouveau trajet</span>
+                    </button>
                 </div>
             </div>
         </div>
